@@ -1,0 +1,21 @@
+{
+    "database": {
+        "host": "localhost",
+        "user": "root",
+        "password": "borming",
+        "connectionLimit": 10,
+        "database": "cms3",
+        "debug": false
+    },
+    "server": {
+        "port": 5001,
+        "pageSize": 100,
+        "logger": {
+            "format": "tiny"
+        }
+    },
+	"cookie":{
+		"ttl":3600,
+		"debug":true
+	}
+}
