@@ -23,6 +23,7 @@ const compression = require('compression');
 const morgan = require('morgan');
 const rjwt = require('restify-jwt-community');
 
+const settings = require('./settings');
 const users = require('./users');
 const pages = require('./pages');
 
@@ -47,6 +48,7 @@ module.exports.init = function (configs, db) {
 	app.use(rjwt({ secret: configs.token.secret }).unless({ path: ['/api/user/login'] }));
 
 	// setup routes
+	settings.init(app, configs, db);
 	users.init(app, configs, db);
 	pages.init(app, configs, db);
 
