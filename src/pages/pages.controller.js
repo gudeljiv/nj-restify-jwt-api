@@ -11,7 +11,7 @@ class PagesController {
 
 	async Get(req, res, next) {
 		req.params.id = req.params && req.params.id ? req.params.id : null;
-		let results = await this.manager.Get(req.params.id);
+		let [results] = await this.manager.GetAll(req.params.id);
 		res.send(200, results);
 	}
 }

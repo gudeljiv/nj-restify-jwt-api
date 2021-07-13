@@ -1,3 +1,4 @@
+const { decode } = require('jsonwebtoken');
 const UsersController = require('./user.controller');
 const UsersManager = require('./user.manager');
 
@@ -20,10 +21,19 @@ const init = (server, configs, database) => {
 };
 
 const isLogedIn = (req, res, next) => {
-	if (!req.session.user) {
-		res.send(401);
-		next();
+	let decoded;
+	let authorization = req.headers.authorization.split(' ')[1];
+	try {
+		decoded = jwt.verify(authorization, this.configs.token.secret);
+		return decoded;
+	} catch (e) {
+		return res.send(401);
 	}
+
+	// if (!req.session.user) {
+	// 	res.send(401);
+	// 	next();
+	// }
 };
 
 exports.init = init;
