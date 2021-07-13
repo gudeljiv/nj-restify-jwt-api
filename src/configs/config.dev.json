@@ -14,12 +14,12 @@
 			"format": "tiny"
 		}
 	},
-	"cookie": {
-		"ttl": 3600,
-		"debug": true
+	"cookie":{
+		"ttl":3600,
+		"debug":true
 	},
-	"token": {
-		"secret": "h$sSao202@!",
-		"expiresIn": "2h"
+	"token":{
+		"secret":"h$sSao202@!",
+		"expiresIn":"2h"
 	}
 }
