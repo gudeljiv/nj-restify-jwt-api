@@ -17,6 +17,7 @@ class UsersController {
 			}
 
 			let [result] = await this.manager.Get(decoded.user.id_cms_users);
+
 			return res.send(200, result);
 		}
 		return res.send(401);

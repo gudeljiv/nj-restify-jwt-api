@@ -20,6 +20,6 @@
 	},
 	"token": {
 		"secret": "h$sSao202@!",
-		"expiresIn": "2h"
+		"expiresIn": "30d"
 	}
 }
